@@ -1,3 +1,7 @@
 index:
     path: /
     controller: App\Infrastructure\Controller\HomeController::index
+
+user_register:
+    path: /user_register
+    controller: App\Infrastructure\Controller\User\UserRegisterController::userRegister
