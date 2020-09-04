@@ -29,3 +29,8 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    # explicitly configure services
+    App\Domain\Services\User\UserRegisterer:
+        arguments:
+            - '@doctrine.orm.entity_manager'
