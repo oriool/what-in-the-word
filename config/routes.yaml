@@ -5,3 +5,7 @@ index:
 user_register:
     path: /user_register
     controller: App\Infrastructure\Controller\User\UserRegisterController::userRegister
+
+user_login:
+    path: /user_login
+    controller: App\Infrastructure\Controller\User\UserLoginController::userLogin
