@@ -34,3 +34,5 @@ services:
     App\Domain\Services\User\UserRegisterer:
         arguments:
             - '@doctrine.orm.entity_manager'
+
+    Symfony\Component\HttpKernel\Profiler\Profiler: '@profiler'

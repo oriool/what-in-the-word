@@ -2,16 +2,17 @@
 
 namespace App\Infrastructure\Controller;
 
-use App\Domain\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Profiler\Profiler;
 
 class HomeController extends AbstractController
 {
-    public function index(Request $request, UserRepository $userRepository)
+    public function index(?Profiler $profiler)
     {
-        $users = $userRepository->findAll();
+        if (null !== $profiler) {
+            $profiler->disable();
+        }
 
-        return $this->render('index.html.twig', ['users' => $users]);
+        return $this->render('index.html.twig');
     }
 }

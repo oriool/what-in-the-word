@@ -1,11 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block title %}Welcome to What In The Word!{% endblock %}
 
 {% block body %}
-    <h1>Hello World!</h1>
-    <button class="btn btn-success">Test</button>
-    {{ dump(users) }}
+    <div class="container h-75">
+        <div class="row h-100 align-items-center">
+            <div id="welcome_text" class="col-md-5 text-center text-white">
+                <h1>What In The Word!</h1>
+                <p>This app will help you remember all the words that you try to learn. You will have to introduce the words you want to memorize with it's translation. Everyday, when entering to the app you will see that transations have disappeard and you have to write them again. Repeating this process everyday will help you remember anything!</p>
+            </div>
+            <div id="login_form" class="offset-md-2 col-md-4 bg-light rounded shadow" style="padding-top: 20px; padding-bottom: 20px;">
+                <form id="login_form">
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email address"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Password"/>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Log In</button>
+                </form>
+                <hr class="w-75" />
+                <a href="#"><button class="btn btn-success">Create New Account</button></a>
+            </div>
+        </div>
+    </div>
+    <footer class="text-center fixed-bottom bg-light">
+        <p class="text-secondary small" style="margin-top: 15px;">
+            Made by Oriol Buqueras Solsona
+            <a href="https://linkedin.com/in/oriol-buqueras-solsona-3b1056120"><img src="https://image.flaticon.com/icons/svg/174/174857.svg" class="navbar-toggler-icon" /></a>
+            <a href="https://github.com/oriool"><img src="https://image.flaticon.com/icons/svg/25/25231.svg" class="navbar-toggler-icon" /></a>
+            <a href="mailto:oriolbuqueras@gmail.com"><img src="https://image.flaticon.com/icons/svg/552/552486.svg" class="navbar-toggler-icon" /></a>
+            Thanks to <a href="https://www.flaticon.com/authors/freepik">Freepik</a> and <a href="https://www.flaticon.com/">flaticon.com</a> for this social network icons
+        </p>
+    </footer>
 {% endblock %}
 
 {% block javascripts %}{% endblock %}
