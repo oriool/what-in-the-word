@@ -1,11 +1,13 @@
-index:
+home:
     path: /
-    controller: App\Infrastructure\Controller\HomeController::index
+    controller: App\Infrastructure\Controller\HomeController::home
 
 user_register:
+    methods: POST
     path: /user_register
     controller: App\Infrastructure\Controller\User\UserRegisterController::userRegister
 
 user_login:
+    methods: POST
     path: /user_login
     controller: App\Infrastructure\Controller\User\UserLoginController::userLogin

@@ -10,12 +10,12 @@
                 <p>This app will help you remember all the words that you try to learn. You will have to introduce the words you want to memorize with it's translation. Everyday, when entering to the app you will see that transations have disappeard and you have to write them again. Repeating this process everyday will help you remember anything!</p>
             </div>
             <div id="login_form" class="offset-md-2 col-md-4 bg-light rounded shadow" style="padding-top: 20px; padding-bottom: 20px;">
-                <form id="login_form">
+                <form id="login_form" action="{{ path('user_login') }}" method="POST">
                     <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Email address"/>
+                        <input type="email" name="email" class="form-control" placeholder="Email address"/>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password"/>
+                        <input type="password" name="password" class="form-control" placeholder="Password"/>
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Log In</button>
                 </form>

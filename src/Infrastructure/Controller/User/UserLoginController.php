@@ -3,6 +3,7 @@
 namespace App\Infrastructure\Controller\User;
 
 use App\Application\UseCase\User\LoginUserUseCase\LoginUserRequest;
+use App\Application\UseCase\User\LoginUserUseCase\LoginUserResponse;
 use App\Application\UseCase\User\LoginUserUseCase\LoginUserUseCase;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -18,9 +19,13 @@ class UserLoginController extends AbstractController
         $loginUserRequest = new LoginUserRequest($email, $password);
         $loginUserResponse = $loginUserUseCase->execute($loginUserRequest);
 
-        return new JsonResponse([
-            'message' => $loginUserResponse->getMessage(),
-            'code' => $loginUserResponse->getCode(),
-        ]);
+        if ($loginUserResponse->getCode() == LoginUserResponse::GENERIC_ERROR) {
+            return new JsonResponse([
+                'message' => $loginUserResponse->getMessage(),
+                'code' => $loginUserResponse->getCode(),
+            ]);
+        }
+
+        return $this->redirectToRoute('home');
     }
 }

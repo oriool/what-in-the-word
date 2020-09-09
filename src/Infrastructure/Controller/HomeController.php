@@ -3,16 +3,17 @@
 namespace App\Infrastructure\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Profiler\Profiler;
 
 class HomeController extends AbstractController
 {
-    public function index(?Profiler $profiler)
+    public function home(?Profiler $profiler, Request $request)
     {
-        if (null !== $profiler) {
-            $profiler->disable();
+        if ($request->cookies->has('token')) {
+            return $this->render('mainApp.html.twig');
         }
 
-        return $this->render('index.html.twig');
+        return $this->render('login.html.twig');
     }
 }
