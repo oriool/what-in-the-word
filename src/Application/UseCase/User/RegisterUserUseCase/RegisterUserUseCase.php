@@ -39,7 +39,7 @@ class RegisterUserUseCase
         }
 
         return new RegisterUserResponse(
-            'Registration completed successfully',
+            'Registration completed successfully. You can now log in.',
             0
         );
     }

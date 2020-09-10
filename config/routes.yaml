@@ -2,6 +2,10 @@ home:
     path: /
     controller: App\Infrastructure\Controller\HomeController::home
 
+user_register_page:
+    path: /user_register_page
+    controller: App\Infrastructure\Controller\RegisterPageRendererController::renderPage
+
 user_register:
     methods: POST
     path: /user_register
