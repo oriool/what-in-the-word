@@ -27,8 +27,8 @@ Encore
     .addEntry('loginFormValidator', './assets/js/validators/loginFormValidator.js')
     .addEntry('registerFormValidator', './assets/js/validators/registerFormValidator.js')
     .addStyleEntry('css/app', './assets/css/global.scss')
-    //.addEntry('page1', './assets/js/page1.js')
-    //.addEntry('page2', './assets/js/page2.js')
+    .addStyleEntry('loginCss', './assets/css/login.css')
+    .addStyleEntry('registerCss', './assets/css/register.css')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()

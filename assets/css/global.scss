@@ -8,3 +8,11 @@ body {
   height: 100%;
   background-color: #6290c3;
 }
+
+form > small {
+  display: none;
+}
+
+#footer_text {
+  margin-top: 15px;
+}

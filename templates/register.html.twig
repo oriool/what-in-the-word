@@ -2,27 +2,31 @@
 
 {% block title %}Register in WITW{% endblock %}
 
+{% block stylesheets %}
+    {{ encore_entry_link_tags('registerCss') }}
+{% endblock %}
+
 {% block body%}
     <div class="container h-75">
         <div class="row h-100 align-items-center justify-content-center">
-            <div id="register_form" class="col-md-5 bg-light rounded shadow" style="padding-top: 20px; padding-bottom: 20px;">
-                <h1 class="text-center" style="margin-bottom: 30px;">Create a new account</h1>
+            <div id="register_div" class="col-md-5 bg-light rounded shadow">
+                <h1 class="text-center">Create a new account</h1>
                 <form id="register_form" action="{{ path('user_register') }}" method="POST">
                     <div class="form-group">
                         <input id="usernameInput" type="text" name="username" class="form-control" placeholder="Username"/>
-                        <small id="usernameInputErrorMessage" class="text-danger" style="display: none"></small>
+                        <small id="usernameInputErrorMessage" class="text-danger"></small>
                     </div>
                     <div class="form-group">
                         <input id="emailInput" type="email" name="email" class="form-control" placeholder="Email address"/>
-                        <small id="emailInputErrorMessage" class="text-danger" style="display: none"></small>
+                        <small id="emailInputErrorMessage" class="text-danger"></small>
                     </div>
                     <div class="form-group">
                         <input id="passwordInput" type="password" name="password" class="form-control" placeholder="Password"/>
-                        <small id="passwordInputErrorMessage" class="text-danger" style="display: none"></small>
+                        <small id="passwordInputErrorMessage" class="text-danger"></small>
                     </div>
                     <div class="form-group">
                         <input id="repeatedPasswordInput" type="password" name="repeatedPassword" class="form-control" placeholder="Repeat the password"/>
-                        <small id="repeatedPasswordInputErrorMessage" class="text-danger" style="display: none"></small>
+                        <small id="repeatedPasswordInputErrorMessage" class="text-danger"></small>
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Create account</button>
                 </form>
