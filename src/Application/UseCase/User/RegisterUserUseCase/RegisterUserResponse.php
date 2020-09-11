@@ -2,27 +2,14 @@
 
 namespace App\Application\UseCase\User\RegisterUserUseCase;
 
-class RegisterUserResponse
+use App\Application\UseCase\GenericResponse;
+
+class RegisterUserResponse extends GenericResponse
 {
-    const USER_ALREADY_EXISTS = 1;
-    const GENERIC_ERROR = 2;
+    const USER_ALREADY_EXISTS = 2;
 
-    private $message;
-    private $errorCode;
-
-    public function __construct(string $message, int $errorCode)
+    public function __construct(string $message, int $code)
     {
-        $this->message = $message;
-        $this->errorCode = $errorCode;
-    }
-
-    public function getMessage(): string
-    {
-        return $this->message;
-    }
-
-    public function getErrorCode(): int
-    {
-        return $this->errorCode;
+        parent::__construct($message, $code);
     }
 }
