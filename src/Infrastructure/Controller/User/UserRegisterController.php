@@ -3,10 +3,8 @@
 namespace App\Infrastructure\Controller\User;
 
 use App\Application\UseCase\User\RegisterUserUseCase\RegisterUserRequest;
-use App\Application\UseCase\User\RegisterUserUseCase\RegisterUserResponse;
 use App\Application\UseCase\User\RegisterUserUseCase\RegisterUserUseCase;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 class UserRegisterController extends AbstractController
@@ -20,11 +18,9 @@ class UserRegisterController extends AbstractController
         $registerUserRequest = new RegisterUserRequest($username, $email, $password);
         $registerUserResponse = $registerUserUseCase->execute($registerUserRequest);
 
-        if ($registerUserResponse->getErrorCode() == RegisterUserResponse::GENERIC_ERROR) {
-            return new JsonResponse([
-                'message' => $registerUserResponse->getMessage(),
-                'code' => $registerUserResponse->getCode(),
-            ]);
+        if ($registerUserResponse->getCode()) {
+            $this->addFlash('danger', $registerUserResponse->getMessage());
+            return $this->redirectToRoute('user_register_page');
         }
 
         $this->addFlash('success', $registerUserResponse->getMessage());

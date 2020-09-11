@@ -1,9 +1,12 @@
 <?php
 
-namespace App\Application\UseCase\User;
+namespace App\Application\UseCase;
 
-class GenericResponse
+abstract class GenericResponse
 {
+    const SUCCESSFUL_REQUEST = 0;
+    const GENERIC_ERROR = 1;
+
     protected $message;
     protected $code;
 

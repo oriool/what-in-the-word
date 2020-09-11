@@ -8,10 +8,12 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% for message in app.flashes('success') %}
-            <div class="alert alert-success">
-                {{ message }}
-            </div>
+        {% for type, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ type }}">
+                    {{ message }}
+                </div>
+                {% endfor %}
         {% endfor %}
 
         {% block body %}{% endblock %}

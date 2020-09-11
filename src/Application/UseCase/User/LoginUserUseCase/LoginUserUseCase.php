@@ -21,11 +21,11 @@ class LoginUserUseCase
         $successful = $this->userLogger->logIn($email, $password);
         if (!$successful) {
             return new LoginUserResponse(
-                'There was an error in the login process',
+                'There was an error in the login process. Please retry.',
                 LoginUserResponse::GENERIC_ERROR
                 );
         }
 
-        return new LoginUserResponse('User logged successfully', 0);
+        return new LoginUserResponse('User logged successfully', LoginUserResponse::SUCCESSFUL_REQUEST);
     }
 }
