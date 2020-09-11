@@ -12,10 +12,12 @@
             <div id="login_form" class="offset-md-2 col-md-4 bg-light rounded shadow" style="padding-top: 20px; padding-bottom: 20px;">
                 <form id="login_form" action="{{ path('user_login') }}" method="POST">
                     <div class="form-group">
-                        <input type="email" name="email" class="form-control" placeholder="Email address"/>
+                        <input id="emailInput" type="email" name="email" class="form-control" placeholder="Email address"/>
+                        <small id="emailInputErrorMessage" class="text-danger" style="display: none"></small>
                     </div>
                     <div class="form-group">
-                        <input type="password" name="password" class="form-control" placeholder="Password"/>
+                        <input id="passwordInput" type="password" name="password" class="form-control" placeholder="Password"/>
+                        <small id="passwordInputErrorMessage" class="text-danger" style="display: none"></small>
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Log In</button>
                 </form>
@@ -35,4 +37,7 @@
     </footer>
 {% endblock %}
 
-{% block javascripts %}{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('loginFormValidator') }}
+{% endblock %}
