@@ -20,3 +20,8 @@ create_category:
     methods: POST
     path: /create_category
     controller: App\Infrastructure\Controller\Category\CreateCategoryController::createCategory
+
+create_word:
+    methods: POST
+    path: /create_word
+    controller: App\Infrastructure\Controller\Word\CreateWordController::createWord
