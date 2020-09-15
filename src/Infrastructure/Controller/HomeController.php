@@ -11,6 +11,8 @@ class HomeController extends AbstractController
     public function home(?Profiler $profiler, Request $request)
     {
         if ($request->cookies->has('token')) {
+            // Retrieve words
+            // Send words to the view
             return $this->render('mainApp.html.twig');
         }
 
