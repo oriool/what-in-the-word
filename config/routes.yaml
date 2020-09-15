@@ -15,3 +15,8 @@ user_login:
     methods: POST
     path: /user_login
     controller: App\Infrastructure\Controller\User\UserLoginController::userLogin
+
+create_category:
+    methods: POST
+    path: /create_category
+    controller: App\Infrastructure\Controller\Category\CreateCategoryController::createCategory
