@@ -27,7 +27,7 @@ class UserLogger
             return false;
         }
 
-        $token = openssl_encrypt($user->getId(), 'AES-256-CBC', Credentials::USER_TOKEN_KEY, 0, Credentials::STATIC_IV);
+        $token = openssl_encrypt($user->getId(), 'AES-256-CBC', Credentials::USER_TOKEN_KEY, 0, Credentials::GET_IV);
         setcookie('token', $token, time() + $this::ONE_MONTH);
 
         return true;
