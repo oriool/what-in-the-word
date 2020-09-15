@@ -25,3 +25,8 @@ create_word:
     methods: POST
     path: /create_word
     controller: App\Infrastructure\Controller\Word\CreateWordController::createWord
+
+check_answer:
+    methods: POST
+    path: /check_answer
+    controller: App\Infrastructure\Controller\Word\CheckAnswerController::checkAnswer

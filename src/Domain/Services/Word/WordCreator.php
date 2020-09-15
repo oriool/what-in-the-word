@@ -26,7 +26,7 @@ class WordCreator
     public function create(string $main, string $translation, int $categoryId): ?Word
     {
         $user = $this->userGetter->getUser();
-        $category = $this->categoryRepository->findBy(['id' => $categoryId, 'user' => $user]);
+        $category = $this->categoryRepository->findOneBy(['id' => $categoryId, 'user' => $user]);
         if (!$category) {
             return null;
         }
