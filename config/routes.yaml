@@ -16,6 +16,11 @@ user_login:
     path: /user_login
     controller: App\Infrastructure\Controller\User\UserLoginController::userLogin
 
+user_logout:
+    methods: POST
+    path: /user_logout
+    controller: App\Infrastructure\Controller\User\UserLogoutController::userLogout
+
 create_category:
     methods: POST
     path: /create_category
