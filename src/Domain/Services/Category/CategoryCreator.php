@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Services\Category\CategoryCreator;
+namespace App\Domain\Services\Category;
 
 use App\Domain\Entity\Category;
 use App\Domain\Services\User\UserGetter;

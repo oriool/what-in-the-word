@@ -2,7 +2,7 @@
 
 namespace App\Application\UseCase\Category\CreateCategoryUseCase;
 
-use App\Domain\Services\Category\CategoryCreator\CategoryCreator;
+use App\Domain\Services\Category\CategoryCreator;
 
 class CreateCategoryUseCase
 {
