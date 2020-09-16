@@ -30,3 +30,8 @@ check_answer:
     methods: POST
     path: /check_answer
     controller: App\Infrastructure\Controller\Word\CheckAnswerController::checkAnswer
+
+practice:
+    methods: POST
+    path: /practice
+    controller: App\Infrastructure\Controller\Category\PracticeController::practice
