@@ -20,7 +20,7 @@ class HomeController extends AbstractController
             $user = $userGetter->getUser();
             $categories = $categoryRepository->findBy(['user' => $user]);
 
-            return $this->render('mainApp.html.twig', ['categories' => $categories]);
+            return $this->render('main_app.html.twig', ['categories' => $categories]);
         }
 
         return $this->render('login.html.twig');

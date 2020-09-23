@@ -17,7 +17,7 @@ user_login:
     controller: App\Infrastructure\Controller\User\UserLoginController::userLogin
 
 user_logout:
-    methods: POST
+    methods: GET
     path: /user_logout
     controller: App\Infrastructure\Controller\User\UserLogoutController::userLogout
 

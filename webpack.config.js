@@ -26,9 +26,11 @@ Encore
     .addEntry('app', './assets/js/app.js')
     .addEntry('loginFormValidator', './assets/js/validators/loginFormValidator.js')
     .addEntry('registerFormValidator', './assets/js/validators/registerFormValidator.js')
+    .addEntry('wordCreator', './assets/js/services/wordCreator.js')
     .addStyleEntry('css/app', './assets/css/global.scss')
     .addStyleEntry('loginCss', './assets/css/login.css')
     .addStyleEntry('registerCss', './assets/css/register.css')
+    .addStyleEntry('mainAppCss', './assets/css/main_app.scss')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
