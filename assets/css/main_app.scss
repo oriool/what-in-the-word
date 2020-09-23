@@ -1,0 +1,185 @@
+.menu-btn {
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.menu-buttons {
+    margin-left: 10px;
+}
+
+header {
+    height: 50px;
+    width: 100%;
+    background-color: #0395af;
+    color: #FFFFFF;
+}
+
+#hello-user {
+    margin-top: 12px;
+    margin-right: 3px;
+    float: right;
+}
+
+#logout-button {
+    float: right;
+    margin: 5px;
+    margin-top: 9px;
+}
+
+#categories {
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.category-container {
+    width: 335px;
+    height: 100%;
+    display: inline-block;
+}
+
+.category-title {
+    font-weight: bold;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+}
+
+.category {
+    float: left;
+    background-color: #ebecf0;
+    border-radius: 7px;
+    width: 100%;
+    margin-left: 7px;
+    margin-top: 7px;
+}
+
+.add-word-cell {
+    border-radius: 5px;
+    border: 1px solid #4cc2d9;
+    background-color: #ebecf5;
+    color: gray;
+    height: 30px;
+    width: 317px;
+    margin-left: 8px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.add-word-cell:hover {
+    cursor: pointer;
+    border: 1px solid #FFFFFF;
+}
+
+.add-word-input {
+    @extend .answer;
+    float: left;
+    margin-left: 7px !important;
+    margin-right: 4px;
+}
+
+.add-translation-input {
+    @extend .answer;
+    float: right;
+    margin-right: 9px !important;
+}
+
+.add-new-word-btn {
+    display: block;
+    float: left;
+    width: 80%;
+    margin-left: 7px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+
+.cancel-adding-word {
+    display: inline;
+    margin-left: 15px;
+    color: gray;
+    font-size: 20px;
+}
+
+
+.cancel-adding-word:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.word-cell {
+    float: left;
+    display: inline-block;
+    background-color: #ffffff;
+    border-bottom: 1px solid #4cc2d9;
+    border-radius: 5px;
+    width: 130px;
+    height: 40px;
+    margin-bottom: 5px;
+    margin-left: 8px;
+    margin-right: 5px;
+}
+
+.word-text {
+    margin-left: 7px;
+    padding-top: 10px;
+}
+
+#arrow {
+    float: left;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 7px
+}
+
+.answer {
+    width: 132px;
+    margin-top: 4px;
+    margin-left: 5px;
+    border-radius: 7px;
+    border: 1px solid #4cc2d9;
+    height: 30px;
+    padding-left: 10px;
+}
+
+.answer:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    padding-left: 10px;
+}
+
+.wrong-answer {
+    @extend .answer;
+    border-color: lightcoral;
+    box-shadow: 0 0 0 0.1rem lightcoral;
+    &:focus {
+        border-color: lightcoral;
+        box-shadow: 0 0 0 0.2rem lightcoral;
+    }
+}
+
+.correctly-answered {
+    @extend .answer;
+    border-color: lightgreen;
+    box-shadow: 0 0 0 0.1rem lightgreen;
+}
+
+.translation {
+    border: none;
+    background: transparent;
+    margin-top: 9px;
+    margin-left: 5px;
+    &:focus {
+        outline: none;
+    }
+}
+
+.clearfix {
+    clear: both;
+    float: none;
+}
