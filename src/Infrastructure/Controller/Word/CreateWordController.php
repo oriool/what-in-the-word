@@ -19,6 +19,9 @@ class CreateWordController extends AbstractController
         $createWordRequest = new CreateWordRequest($main, $translation, $categoryId);
         $createWordResponse = $createWordUseCase->execute($createWordRequest);
 
-        return new JsonResponse(['error' => $createWordResponse->getCode()]);
+        return new JsonResponse([
+            'error' => $createWordResponse->getCode(),
+            'message' => $createWordResponse->getMessage(),
+        ]);
     }
 }

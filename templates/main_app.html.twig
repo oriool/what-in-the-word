@@ -21,12 +21,13 @@
         <div class="category-container">
             <div class="category">
                 <div class="category-title">{{ category.title }}</div>
-                <div id="add-word-cell-{{ category.id }}" class="add-word-cell">
-                    <p class="small">+ Add new word</p>
+                <div id="create-word-cell-{{ category.id }}" class="create-word-cell">
+                    <p class="small" data-category-id="{{ category.id }}" onclick="showWordCreationForm(this)">+ Add new word</p>
                 </div>
 
-                {% include 'main_app_modules/add_new_word.html.twig' %}
+                {% include 'main_app_modules/create_new_word.html.twig' %}
 
+                <div id="words-{{ category.id }}">
                 {% for word in category.words %}
                     <div class="word-cell">
                         <p class="word-text small">{{ word.main }}</p>
@@ -44,6 +45,7 @@
                     {% endif %}
                     <div class="clearfix"></div>
                 {% endfor %}
+                </div>
             </div>
         </div>
     {% endfor %}
