@@ -56,7 +56,7 @@ header {
     margin-top: 7px;
 }
 
-.add-word-cell {
+.create-word-cell {
     border-radius: 5px;
     border: 1px solid #4cc2d9;
     background-color: #ebecf5;
@@ -69,25 +69,29 @@ header {
     padding-top: 5px;
 }
 
-.add-word-cell:hover {
+.create-word-cell:hover {
     cursor: pointer;
     border: 1px solid #FFFFFF;
 }
 
-.add-word-input {
+.create-word-input {
     @extend .answer;
     float: left;
     margin-left: 7px !important;
     margin-right: 4px;
 }
 
-.add-translation-input {
+.create-new-word-div {
+    display: none;
+}
+
+.create-translation-input {
     @extend .answer;
     float: right;
     margin-right: 9px !important;
 }
 
-.add-new-word-btn {
+.create-new-word-btn {
     display: block;
     float: left;
     width: 80%;
@@ -96,7 +100,7 @@ header {
     margin-bottom: 10px;
 }
 
-.cancel-adding-word {
+.cancel-creating-word {
     display: inline;
     margin-left: 15px;
     color: gray;
@@ -104,7 +108,7 @@ header {
 }
 
 
-.cancel-adding-word:hover {
+.cancel-creating-word:hover {
     color: black;
     cursor: pointer;
 }
@@ -169,14 +173,22 @@ header {
     box-shadow: 0 0 0 0.1rem lightgreen;
 }
 
+//.translation {
+//    border: none;
+//    background: transparent;
+//    margin-top: 9px;
+//    margin-left: 5px;
+//    &:focus {
+//        outline: none;
+//    }
+//}
+
 .translation {
     border: none;
     background: transparent;
     margin-top: 9px;
     margin-left: 5px;
-    &:focus {
-        outline: none;
-    }
+    pointer-events: none;
 }
 
 .clearfix {
