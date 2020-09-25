@@ -32,8 +32,8 @@ class CheckAnswerUseCase
             );
         }
 
-        $correctAnswer = $this->answerChecker->check($wordId, $answer);
-        if (!$correctAnswer) {
+        $nextWordId = $this->answerChecker->check($wordId, $answer);
+        if (!$nextWordId) {
             return new CheckAnswerResponse(
                 'The answer is wrong! Try again!',
                 CheckAnswerResponse::WRONG_ANSWER
@@ -42,7 +42,8 @@ class CheckAnswerUseCase
 
         return new CheckAnswerResponse(
             'The answer is correct!',
-            CheckAnswerResponse::CORRECT_ANSWER
+            CheckAnswerResponse::CORRECT_ANSWER,
+            $nextWordId
         );
     }
 }

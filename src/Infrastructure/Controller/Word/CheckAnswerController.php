@@ -21,6 +21,7 @@ class CheckAnswerController extends AbstractController
         return new JsonResponse([
             'message' => $checkAnswerResponse->getMessage(),
             'error' => $checkAnswerResponse->getCode(),
+            'nextWordId' => $checkAnswerResponse->getNextWordId()
         ]);
     }
 }

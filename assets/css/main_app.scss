@@ -171,6 +171,7 @@ header {
     @extend .answer;
     border-color: lightgreen;
     box-shadow: 0 0 0 0.1rem lightgreen;
+    pointer-events: none;
 }
 
 //.translation {

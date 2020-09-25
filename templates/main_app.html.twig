@@ -36,8 +36,10 @@
                     {% if false %}
                         <input class="answer small" type="text" maxlength="16" placeholder="new translation"/>
                     {% elseif (word.answerDate < date('-12 hours')) %}
-{#                    {% elseif (word.answerDate > date('-12 hours')) %}#}
-                        <input class="answer small" maxlength="16" type="text" />
+                        <form data-word-id="{{ word.id }}" onsubmit="checkAnswer(this, event)">
+                            <input id="answer-{{ word.id }}" class="answer small" maxlength="16" type="text" autocomplete="off" />
+                            <button type="submit" hidden></button>
+                        </form>
                     {% else %}
                     <div class="word-cell">
                         <input class="translation small" maxlength="16" type="text" value="{{ word.translation }}" />
@@ -55,6 +57,7 @@
 {% block javascripts %}
     {{ parent() }}
     {{ encore_entry_script_tags('wordCreator') }}
+    {{ encore_entry_script_tags('answerChecker') }}
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
