@@ -16,11 +16,18 @@ class AnswerChecker
         $this->entityManager = $entityManager;
     }
 
-    public function check(int $wordId, string $answer): bool
+    public function check(int $wordId, string $answer)
     {
         $word = $this->wordRepository->find($wordId);
         if (strtolower($word->getTranslation()) != strtolower($answer)) {
             return false;
+        }
+
+        try {
+            $nextWord = $this->wordRepository->findNextWord($word);
+            $nextWordId = $nextWord->getId();
+        } catch (\Exception $e) {
+            $nextWordId = true;
         }
 
         $word->setAnswerDate(new \DateTime('now'));
@@ -28,6 +35,6 @@ class AnswerChecker
         $this->entityManager->persist($word);
         $this->entityManager->flush();
 
-        return true;
+        return $nextWordId;
     }
 }

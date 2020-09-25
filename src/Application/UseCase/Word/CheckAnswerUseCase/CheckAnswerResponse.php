@@ -11,8 +11,16 @@ class CheckAnswerResponse extends GenericResponse
     const ANSWER_NOT_PROVIDED = 3;
     const WRONG_ANSWER = 4;
 
-    public function __construct(string $message, int $code)
+    private $nextWordId;
+
+    public function __construct(string $message, int $code, ?int $nextWordId = null)
     {
         parent::__construct($message, $code);
+        $this->nextWordId = $nextWordId;
+    }
+
+    public  function getNextWordId(): ?int
+    {
+        return $this->nextWordId;
     }
 }

@@ -27,6 +27,7 @@ Encore
     .addEntry('loginFormValidator', './assets/js/validators/loginFormValidator.js')
     .addEntry('registerFormValidator', './assets/js/validators/registerFormValidator.js')
     .addEntry('wordCreator', './assets/js/services/wordCreator.js')
+    .addEntry('answerChecker', './assets/js/services/answerChecker.js')
     .addStyleEntry('css/app', './assets/css/global.scss')
     .addStyleEntry('loginCss', './assets/css/login.css')
     .addStyleEntry('registerCss', './assets/css/register.css')
