@@ -15,17 +15,23 @@ class CreateCategoryUseCase
 
     public function execute(CreateCategoryRequest $createCategoryRequest)
     {
-        $category = $this->categoryCreator->create($createCategoryRequest->getTitle());
+        $categoryId = $createCategoryRequest->getCategoryId();
+        $title = $createCategoryRequest->getTitle();
+
+        $category = $this->categoryCreator->create($categoryId, $title);
         if (!$category) {
             return new CreateCategoryResponse(
                 'Something went wrong while creating a category',
-                CreateCategoryResponse::GENERIC_ERROR
+                CreateCategoryResponse::GENERIC_ERROR,
+                $category->getTitle()
             );
         }
 
         return new CreateCategoryResponse(
             'Category created successfully',
-            CreateCategoryResponse::SUCCESSFUL_REQUEST
+            CreateCategoryResponse::SUCCESSFUL_REQUEST,
+            $category->getTitle(),
+            $category->getId()
         );
     }
 }
