@@ -12,11 +12,17 @@ class CreateCategoryController extends AbstractController
 {
     public function createCategory(Request $request, CreateCategoryUseCase $createCategoryUseCase)
     {
+        $categoryId = $request->get('categoryId');
         $title = $request->get('title');
 
-        $createCategoryRequest = new CreateCategoryRequest($title);
+        $createCategoryRequest = new CreateCategoryRequest($categoryId, $title);
         $createCategoryResponse = $createCategoryUseCase->execute($createCategoryRequest);
 
-        return new JsonResponse(['error' => $createCategoryResponse->getCode()]);
+        return new JsonResponse([
+            'error' => $createCategoryResponse->getCode(),
+            'message' => $createCategoryResponse->getMessage(),
+            'title' => $createCategoryResponse->getTitle(),
+            'categoryId' => $createCategoryResponse->getCategoryId(),
+        ]);
     }
 }

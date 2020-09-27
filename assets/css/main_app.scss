@@ -45,6 +45,12 @@ header {
     margin-left: 15px;
     margin-bottom: 10px;
     padding-top: 10px;
+    &-input {
+        margin-left: 10px !important;
+        margin-bottom: 7px !important;
+        margin-top: 8px !important;
+        padding-top: 0px !important;
+    }
 }
 
 .category {
