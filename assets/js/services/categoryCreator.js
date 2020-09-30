@@ -6,7 +6,7 @@ update = (newTitle, categoryId) => {
         }
 
         $(`#category-title-${categoryId}`).html(
-            `<div class="category-title">${title}</div>`
+            `<div class="category-title" onclick="enableTitleEditMode(this)" data-category-id="${categoryId}">${newTitle}</div>`
         );
     });
 }
