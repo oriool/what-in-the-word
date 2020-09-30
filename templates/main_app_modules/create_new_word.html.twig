@@ -1,6 +1,6 @@
-<form id="create-new-word-div-{{ category.id }}" class="create-new-word-div">
+<form id="create-new-word-form-{{ category.id }}" class="create-new-word-form">
     <input id="create-main-input-{{ category.id }}" class="create-word-input small" type="text" maxlength="16" placeholder="new word"/>
-    <p id="arrow">➡️</p>
+    <p class="arrow">➡️</p>
     <input id="create-translation-input-{{ category.id }}" class="create-translation-input small" type="text" maxlength="16" placeholder="new translation"/>
     <div class="clearfix"></div>
     <button type="submit" class="btn btn-success btn-sm create-new-word-btn" data-category-id="{{ category.id }}" onclick="createWord(this, event)">Create new word</button>

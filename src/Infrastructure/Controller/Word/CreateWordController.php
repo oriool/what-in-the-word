@@ -22,6 +22,7 @@ class CreateWordController extends AbstractController
         return new JsonResponse([
             'error' => $createWordResponse->getCode(),
             'message' => $createWordResponse->getMessage(),
+            'wordId' => $createWordResponse->getWordId(),
         ]);
     }
 }

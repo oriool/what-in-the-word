@@ -1,0 +1,56 @@
+.create-word-cell {
+  border-radius: 5px;
+  border: 1px solid #4cc2d9;
+  background-color: #ebecf5;
+  color: gray;
+  height: 30px;
+  width: 317px;
+  margin-left: 8px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+.create-word-cell:hover {
+  cursor: pointer;
+  border: 1px solid #FFFFFF;
+}
+
+.create-word-input {
+  @extend .answer;
+  float: left;
+  margin-left: 7px !important;
+  margin-right: 4px;
+}
+
+.create-new-word-form {
+  display: none;
+}
+
+.create-translation-input {
+  @extend .answer;
+  float: right;
+  margin-right: 9px !important;
+}
+
+.create-new-word-btn {
+  display: block;
+  float: left;
+  width: 80%;
+  margin-left: 7px;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+
+.cancel-creating-word {
+  display: inline;
+  margin-left: 15px;
+  color: gray;
+  font-size: 20px;
+}
+
+
+.cancel-creating-word:hover {
+  color: black;
+  cursor: pointer;
+}

@@ -29,20 +29,22 @@
 
                 <div id="words-{{ category.id }}">
                 {% for word in category.words %}
-                    <div class="word-cell">
-                        <p class="word-text small">{{ word.main }}</p>
+                    <div id="word-{{ word.id }}" class="word" data-word-id="{{ word.id }}">
+                        <div class="word-cell">
+                            <p class="word-text small">{{ word.main }}</p>
+                        </div>
+                        <p id="arrow-{{ word.id }}" class="arrow" onclick="removeWord({{ word.id }})">➡️</p>
+                        {% if (word.answerDate < date('-12 hours')) %}
+                            <form data-word-id="{{ word.id }}" onsubmit="checkAnswer(this, event)">
+                                <input id="answer-{{ word.id }}" class="answer small" maxlength="16" type="text" autocomplete="off" />
+                                <button type="submit" hidden></button>
+                            </form>
+                        {% else %}
+                        <div class="word-cell">
+                            <input class="translation small" maxlength="16" type="text" value="{{ word.translation }}" />
+                        </div>
+                        {% endif %}
                     </div>
-                    <p id="arrow-{{ word.id }}" class="arrow">➡️</p>
-                    {% if (word.answerDate < date('-12 hours')) %}
-                        <form data-word-id="{{ word.id }}" onsubmit="checkAnswer(this, event)">
-                            <input id="answer-{{ word.id }}" class="answer small" maxlength="16" type="text" autocomplete="off" />
-                            <button type="submit" hidden></button>
-                        </form>
-                    {% else %}
-                    <div class="word-cell">
-                        <input class="translation small" maxlength="16" type="text" value="{{ word.translation }}" />
-                    </div>
-                    {% endif %}
                     <div class="clearfix"></div>
                 {% endfor %}
                 </div>
@@ -58,6 +60,7 @@
     {{ encore_entry_script_tags('answerChecker') }}
     {{ encore_entry_script_tags('categoryCreator') }}
     {{ encore_entry_script_tags('editModeServices') }}
+    {{ encore_entry_script_tags('wordRemover') }}
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>

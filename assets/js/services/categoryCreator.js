@@ -30,9 +30,9 @@ addFormToCreateCategory = () => {
                 <div id="create-word-cell-${categoryId}" class="create-word-cell">
                     <p class="small" data-category-id="${categoryId}" onclick="showWordCreationForm(this)">+ Add new word</p>
                 </div>
-                <form id="create-new-word-div-${categoryId}" class="create-new-word-div">
+                <form id="create-new-word-form-${categoryId}" class="create-new-word-form">
                     <input id="create-main-input-${categoryId}" class="create-word-input small" type="text" maxlength="16" placeholder="new word"/>
-                    <p id="arrow">➡️</p>
+                    <p class="arrow">➡️</p>
                     <input id="create-translation-input-${categoryId}" class="create-translation-input small" type="text" maxlength="16" placeholder="new translation"/>
                     <div class="clearfix"></div>    
                     <button type="submit" class="btn btn-success btn-sm create-new-word-btn" data-category-id="${categoryId}" onclick="createWord(this, event)">Create new word</button>

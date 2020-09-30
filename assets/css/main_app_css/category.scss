@@ -1,0 +1,36 @@
+#categories {
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.category-container {
+    width: 335px;
+    height: 100%;
+    display: inline-block;
+}
+
+.category-title {
+    font-weight: bold;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    cursor: pointer;
+&-input {
+     margin-left: 10px !important;
+     margin-bottom: 7px !important;
+     margin-top: 8px !important;
+     padding-top: 0px !important;
+ }
+}
+
+.category {
+    float: left;
+    background-color: #ebecf0;
+    border-radius: 7px;
+    width: 100%;
+    margin-left: 7px;
+    margin-top: 7px;
+}
