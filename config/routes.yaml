@@ -44,4 +44,10 @@ practice:
 remove_category:
     methods: POST
     path: /remove_category
-    controller: App\Infrastructure\Controller\Category\RemoveCategoryController::remove
+    controller: App\Infrastructure\Controller\Category\RemoveCategoryController::removeCategory
+
+remove_word:
+    methods: POST
+    path: /remove_word
+    controller: App\Infrastructure\Controller\Word\RemoveWordController::removeWord
+

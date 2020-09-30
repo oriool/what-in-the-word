@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class RemoveCategoryController extends AbstractController
 {
-    public function remove(Request $request, RemoveCategoryUseCase $removeCategoryUseCase)
+    public function removeCategory(Request $request, RemoveCategoryUseCase $removeCategoryUseCase)
     {
         $categoryId = $request->get('categoryId');
 

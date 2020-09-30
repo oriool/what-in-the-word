@@ -30,6 +30,7 @@ Encore
     .addEntry('answerChecker', './assets/js/services/answerChecker.js')
     .addEntry('categoryCreator', './assets/js/services/categoryCreator.js')
     .addEntry('editModeServices', './assets/js/services/editModeServices.js')
+    .addEntry('wordRemover', './assets/js/services/wordRemover.js')
     .addStyleEntry('css/app', './assets/css/global.scss')
     .addStyleEntry('loginCss', './assets/css/login.css')
     .addStyleEntry('registerCss', './assets/css/register.css')

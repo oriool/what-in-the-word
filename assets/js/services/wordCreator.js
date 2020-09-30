@@ -21,12 +21,14 @@ createWord = (element, event) => {
             $(`#create-translation-input-${categoryId}`).val('');
 
             const newWordHtml = `
-                <div class="word-cell">
-                    <p class="word-text small">${main}</p>
-                </div>
-                <p id="arrow-${wordId}" class="arrow">➡️</p>
-                <div class="word-cell">
-                    <input class="translation small" maxlength="16" type="text" value="${translation}" />
+                <div id="word-${wordId}" class="word" data-word-id="${wordId}" data-type="word">
+                    <div class="word-cell">
+                        <p class="word-text small">${main}</p>
+                    </div>
+                    <p id="arrow-${wordId}" class="arrow" onclick="removeWord(${wordId})">➡️</p>
+                    <div class="word-cell">
+                        <input class="translation small" maxlength="16" type="text" value="${translation}" />
+                    </div>
                 </div>
                 <div class="clearfix"></div>`;
 
