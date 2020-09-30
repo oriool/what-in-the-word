@@ -51,3 +51,7 @@ remove_word:
     path: /remove_word
     controller: App\Infrastructure\Controller\Word\RemoveWordController::removeWord
 
+start_demo:
+    methods: GET
+    path: /start_demo
+    controller: App\Infrastructure\Controller\Demo\DemoController::startDemo
