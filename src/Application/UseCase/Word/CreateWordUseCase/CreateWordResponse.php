@@ -10,8 +10,16 @@ class CreateWordResponse extends GenericResponse
     const TRANSLATION_NOT_PROVIDED = 3;
     const CATEGORY_MISSING = 4;
 
-    public function __construct(string $message, int $code)
+    private $wordId;
+
+    public function __construct(string $message, int $code, ?int $wordId = null)
     {
         parent::__construct($message, $code);
+        $this->wordId = $wordId;
+    }
+
+    public function getWordId(): ?int
+    {
+        return $this->wordId;
     }
 }

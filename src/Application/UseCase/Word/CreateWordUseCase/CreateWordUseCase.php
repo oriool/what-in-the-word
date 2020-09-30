@@ -13,7 +13,7 @@ class CreateWordUseCase
         $this->wordCreator = $wordCreator;
     }
 
-    public function execute(CreateWordRequest $createWordRequest)
+    public function execute(CreateWordRequest $createWordRequest): CreateWordResponse
     {
         $main = $createWordRequest->getMain();
         $translation = $createWordRequest->getTranslation();
@@ -50,7 +50,8 @@ class CreateWordUseCase
 
         return new CreateWordResponse(
             'Word created successfully',
-            CreateWordResponse::SUCCESSFUL_REQUEST
+            CreateWordResponse::SUCCESSFUL_REQUEST,
+            $word->getId()
         );
     }
 }
