@@ -40,3 +40,8 @@ practice:
     methods: POST
     path: /practice
     controller: App\Infrastructure\Controller\Category\PracticeController::practice
+
+remove_category:
+    methods: POST
+    path: /remove_category
+    controller: App\Infrastructure\Controller\Category\RemoveCategoryController::remove
