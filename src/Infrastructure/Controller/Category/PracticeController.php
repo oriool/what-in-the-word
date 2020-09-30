@@ -5,15 +5,12 @@ namespace App\Infrastructure\Controller\Category;
 use App\Application\UseCase\Category\PracticeUseCase\PracticeRequest;
 use App\Application\UseCase\Category\PracticeUseCase\PracticeUseCase;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 
 class PracticeController extends AbstractController
 {
-    public function practice(Request $request, PracticeUseCase $practiceUseCase)
+    public function practice(PracticeUseCase $practiceUseCase)
     {
-        $categoryId = $request->get('categoryId');
-
-        $practiceRequest = new PracticeRequest($categoryId);
+        $practiceRequest = new PracticeRequest();
         $practiceResponse = $practiceUseCase->execute($practiceRequest);
 
         $error = $practiceResponse->getCode();

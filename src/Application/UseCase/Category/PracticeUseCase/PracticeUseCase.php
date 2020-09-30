@@ -15,7 +15,7 @@ class PracticeUseCase
 
     public function execute(PracticeRequest $practiceRequest)
     {
-        $success = $this->answerDatesUpdater->update($practiceRequest->getCategoryId());
+        $success = $this->answerDatesUpdater->update();
         if (!$success) {
             return new PracticeResponse(
                 'There was an error while trying to update the answer dates',

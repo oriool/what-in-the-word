@@ -6,7 +6,7 @@ class PracticeRequest
 {
     private $categoryId;
 
-    public function __construct(?int $categoryId)
+    public function __construct(?int $categoryId = null)
     {
         $this->categoryId = $categoryId;
     }

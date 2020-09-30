@@ -22,21 +22,23 @@ class AnswerDatesUpdater
         $this->entityManager = $entityManager;
     }
 
-    public function update(?int $categoryId): bool
+    public function update(): bool
     {
         $user = $this->userGetter->getUser();
-        $category = $this->categoryRepository->findOneBy(['id' => $categoryId, 'user' => $user]);
+        $categories = $this->categoryRepository->findBy(['user' => $user]);
 
-        if (!$category) {
+        if (!$categories) {
             return false;
         }
 
-        foreach ($category->getWords() as $word) {
-            $word->setAnswerDate(new \DateTime('yesterday'));
+        foreach ($categories as $category) {
+            foreach ($category->getWords() as $word) {
+                $word->setAnswerDate(new \DateTime('yesterday'));
+            }
+            $this->entityManager->persist($category);
         }
 
         try {
-            $this->entityManager->persist($category);
             $this->entityManager->flush();
         } catch (\Exception $e) {
             return false;

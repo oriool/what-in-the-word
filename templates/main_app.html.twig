@@ -11,6 +11,9 @@
         <a id="logout-button" class="btn btn-light btn-sm" href="{{ path('user_logout') }}">Log Out</a>
         <div class="menu-buttons">
             <button class="btn btn-light btn-sm float-left menu-btn" onclick="addFormToCreateCategory()">Add category</button>
+            <form action="{{ path('practice') }}" method="POST">
+                <button class="btn btn-light btn-sm float-left menu-btn">Practice</button>
+            </form>
         </div>
     </header>
 
