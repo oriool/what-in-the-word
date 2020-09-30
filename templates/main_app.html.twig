@@ -16,7 +16,7 @@
 
     <div id="categories">
     {% for category in categories %}
-        <div class="category-container">
+        <div id="category-container-{{ category.id }}" class="category-container">
             <div class="category">
                 <div id="category-title-{{ category.id }}">
                     <div class="category-title" onclick="enableTitleEditMode(this)" data-category-id="{{ category.id }}">{{ category.title }}</div>

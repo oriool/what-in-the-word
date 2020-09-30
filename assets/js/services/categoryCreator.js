@@ -20,7 +20,7 @@ addFormToCreateCategory = () => {
 
         const categoriesHtml = $('#categories').html();
         const newCategory = `
-        <div class="category-container">
+        <div id="category-container-${categoryId}" class="category-container">
             <div class="category">
                 <div id="category-title-${categoryId}">
                     <form onsubmit="updateCategoryTitle(this, event)" data-category-id="${categoryId}">               
