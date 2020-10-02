@@ -1,6 +1,8 @@
 # what-in-the-word app
 Are you learning a new language? This app will help you remember all the new vocabulary. In this app you will be able to introduce the words you want to memorize with its translation. Every day, when entering to the app you will see that translations have disappeared, and you have to write them again. Repeating this process every day will help you remember anything! There's also a practice mode that will let you test yourself at any time.
 
+### [Click here to try the app!](https://what-in-the-word.herokuapp.com)
+
 ## Commits
 Two emojis are used to describe te general purpose of the commits:
 
