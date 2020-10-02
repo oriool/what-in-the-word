@@ -6,13 +6,11 @@ use App\Domain\Repository\CategoryRepository;
 use App\Domain\Services\User\UserGetter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpKernel\Profiler\Profiler;
 
 class HomeController extends AbstractController
 {
     public function home(
         Request $request,
-        ?Profiler $profiler,
         UserGetter $userGetter,
         CategoryRepository $categoryRepository)
     {
