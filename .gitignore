@@ -1,5 +1,4 @@
 /.idea
-/src/Domain/Credentials.php
 
 ###> symfony/framework-bundle ###
 /.env.local
