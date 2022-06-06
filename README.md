@@ -10,6 +10,23 @@ Two emojis are used to describe te general purpose of the commits:
 
 🔄: Refactor/small update/fix existing features
 
+## Handy commands
+```
+# Start Symfony server
+symfony server:start
+
+# Create entity
+php bin/console make:entity
+
+# db migrations
+php bin/console doctrine:migrations:diff
+php bin/console doctrine:migrations:migrate
+
+# Compile css
+yarn encore dev
+yarn run encore dev --watch
+```
+
 ## How does it work?
 The most important things are **categories** and **words**. The user can create categories, and these categories are the ones that will contain words. Every word has a **main** and a **translation**. For example: _hola_ (main) / _hello_ (translation).
 
